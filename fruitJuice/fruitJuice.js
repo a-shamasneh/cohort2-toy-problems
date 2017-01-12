@@ -21,7 +21,22 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
-  // TODO
+	 
+  return{
+	 amounts:{},
+	total:0,
+  	getTotalAmount:function(){
+  		return this.total
+  	},
+  	getConcentration:function(str){
+  		var quantity=this.amounts[str];
+  		return quantity/this.total;
+  	},
+  	add:function(num,str){
+  		this.amounts[str]=num
+  		this.total+=num
+  	}
+  }
 }
 
 /*
