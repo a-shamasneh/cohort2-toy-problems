@@ -22,7 +22,7 @@ rotate(data, 1) // => [5, 1, 2, 3, 4]
 rotate(data, 2) // => [4, 5, 1, 2, 3] 5 4 
 rotate(data, 5) // => [1, 2, 3, 4, 5] 
 rotate(data, 0) // => [1, 2, 3, 4, 5]
-rotate(data, -1) // => [2, 3, 4, 5, 1]
+ // => [2, 3, 4, 5, 1]
 rotate(data, -2) // => [3, 4, 5, 1, 2]
 rotate(data, -5) // => [1, 2, 3, 4, 5]
 
@@ -32,10 +32,28 @@ Meaning that if we exceed the indices of the array it keeps rotating.
 rotate(data, 7)     // => [4, 5, 1, 2, 3]
 rotate(data, 11)    // => [5, 1, 2, 3, 4]
 rotate(data, 12478) // => [3, 4, 5, 1, 2]
-
+rotate(data, -1)
 */
 function rotate(array, steps){
 
+if (steps>0){
+	
+	for(i=steps;i>0;i--){
+		array.unshift(array[array.length-1])
+		array.splice(array.length-1,1)
+	}
+	return array;
+}
+if(steps<0){
+	for (var i=steps;i!=0;i++){
+		array.push(array[0]);
+		array.splice(0,1);
+	}
+	return array;
+	}
+	if(steps==0){
+		return array;
+	}
 }
 
 /*
