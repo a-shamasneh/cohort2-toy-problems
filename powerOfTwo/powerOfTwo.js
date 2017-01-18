@@ -5,5 +5,14 @@ Hint the answer is 1366.
 */
 
 var powerOfTwo = function(num){
+var number= Math.pow(2, num).toString().split('');
 
+var result=0;
+for(var i=0;i<number.length;i++){
+	var num=parseInt(number[i])
+result+=num
 }
+return result;
+}
+
+/// this solution is working for small number 
