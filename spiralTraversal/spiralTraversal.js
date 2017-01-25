@@ -11,5 +11,27 @@
  */
 
 var spiralTraversal = function(matrix){
+	var arr=[];
+	var exer1=matrix.slice(1);
+	for(var i=0;i<matrix[0].length;i++){
+		arr.push(matrix[0][i])
+		};
+		for(var j=0;j<exer1.length;j++){
+			var y=exer1[j].length-1
+			//console.log(y);
+			if(j!==exer1.length){
+				arr.push(exer1[j][y])
+			}
+			else{
+				for(var s=exer1.length-1;s>=0;s--){
+					var x=exer1[s].length;
+					arr.push(exer1[s][x-1])
+					x--;
+				}
+			}
+			
+		}
+		return arr;
+	
 
 };
