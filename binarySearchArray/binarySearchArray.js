@@ -11,6 +11,28 @@
  */
 
 var binarySearch = function (array, target) {
-  
+	 // debugger;
+	var mid=array.length-1/2;
+	if(mid%2!==0){
+		mid=Math.floor(array.length-1)*0.5
+	
+	}
+	if(array[mid]>target){
+		for(var right=0;right<mid;right++){
+			if(array[right]==target){
+				return right;
+			}
+		}
+	
+	}
+	else{
+		for(var left=mid*2;left>=mid;left--){
+			if(array[left]==target){
+				return left
+			}
+		}
+		
+	}
+	
 };
 
