@@ -38,8 +38,15 @@
 var add2 = function(number){ return number + 2; }
 var multiplyBy3 = function(number){ return number * 3; }
 
-var pipe = function(func1,func2){
-  
+var pipe = function(){
+  var  arr=[...arguments];/// convert arguments to array 
+ var work=function(name){//pass value
+ 	for(var i=0;i<arr.length;i++){
+ 		name=arr[i].call(this,name)
+ 	}
+ 	return name
+ }
+ return work;
 };
 
 var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
@@ -50,7 +57,14 @@ var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
  var exclaim = function(statement) { return statement.toUpperCase() + '!';}
 
 var compose = function(){
-  
+var  arr=[...arguments];/// convert arguments to array 
+ var work=function(name){///pass value
+ 	for(var i=arr.length-1;i>=0;i--){
+ 		name=arr[i].call(this,name)
+ 	}
+ 	return name
+ }
+ return work;
 };
 
 
