@@ -8,6 +8,30 @@
  */
 
 var largestProductOfThree = function(array) {
+	array=array.sort();
+
+	 if(array.length>=3){
+	 	var result=array[array.length-1];
+	  result=result*array[array.length-2]*array[array.length-3]
+	 	return Math.abs(result);
+	 }
+	 else{
+	 	var result=array[0];
+	 	for(var i=0;i<array.length;i++){
+		
+			if(array[i]<0){
+
+			result=result*array[i]*-1
+		}
+		else{
+			result=result*array[i]
+		}
+		
+		
+	}
+	return result;
+
+	 }
 	
 };
 
