@@ -23,5 +23,13 @@
 */
 
 Array.prototype.isSubsetOf = function (arr) {
+for(var i=0;i<this.length;i++){
+	if(typeof(this[i])=="objcet"){
+
+		return this[i].isSubsetOf(arr)
+	}
+
+	return arr.indexOf(this[i])>=0
+  }
 
 }
