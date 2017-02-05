@@ -25,11 +25,15 @@
 Array.prototype.isSubsetOf = function (arr) {
 for(var i=0;i<this.length;i++){
 	if(typeof(this[i])=="objcet"){
-
 		return this[i].isSubsetOf(arr)
 	}
-
+	
 	return arr.indexOf(this[i])>=0
   }
 
 }
+// var arrayOfChildrenNames = ["Amir Rahnama", "Mahshid Rahnama"];
+// var arrayOfFamilyMemberNames = ["Davood Rahnama", "Maryam Toloo", "Amir Rahnama", "Mahshid Rahnama"];
+ 
+// var isarrayOfNamesSubsetOfFamily = arrayOfChildrenNames.every(function(val) { return arrayOfFamilyMemberNames.indexOf(val) >= 0; }));
+// console.log(isarrayOfNamesSubsetOfFamily); // true
