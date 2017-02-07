@@ -36,6 +36,15 @@ var makeBoard = function(n) {
 //The answer for a board size 5 is 8512 unique paths
 
 var robotPaths = function(myBoard) {
+	var result=0;
+	var grid=makeBoard(myBoard);
+	for(var i=0;i<grid.length;i++){
+
+		for(j=0;j<grid.length;j++){
+			result+=myBoard*i+1*myBoard-j
+		}
+	}
+	return result
  
 }
 
