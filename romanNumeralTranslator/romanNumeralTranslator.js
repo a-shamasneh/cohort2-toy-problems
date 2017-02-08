@@ -26,4 +26,36 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+
+	romanNumeral=romanNumeral.toUpperCase();
+	var roman =romanNumeral.split("");
+	 console.log(roman);
+	 var result=0;
+	if(roman.length>1){
+	for (var i=0;i<roman.length;i++){
+		if(roman[i] in DIGIT_VALUES){/// check if the input valid roman number 
+			if(DIGIT_VALUES[roman[i]]<DIGIT_VALUES[roman[i+1]]){
+				result += DIGIT_VALUES[roman[i+1]]-DIGIT_VALUES[roman[i]];
+				i++; ///  to skip next elem
+			}
+			else{
+				result+=DIGIT_VALUES[roman[i]]
+			}
+		}
+		else{
+			return "invalid input!!!";
+		}
+		}
+		return result;
+
+	}//// if one number 
+	else{
+		if(roman[0] in DIGIT_VALUES){
+			result=DIGIT_VALUES[roman[0]];
+			return result;
+		}
+		return "not valid input" ;
+	}
+	
 }
+
