@@ -23,6 +23,7 @@
 */
 
 Array.prototype.isSubsetOf = function (arr) {
+<<<<<<< HEAD
 for(var i=0;i<this.length;i++){
 	if(typeof(this[i])=="objcet"){
 		return this[i].isSubsetOf(arr)
@@ -37,3 +38,7 @@ for(var i=0;i<this.length;i++){
  
 // var isarrayOfNamesSubsetOfFamily = arrayOfChildrenNames.every(function(val) { return arrayOfFamilyMemberNames.indexOf(val) >= 0; }));
 // console.log(isarrayOfNamesSubsetOfFamily); // true
+=======
+
+}
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
