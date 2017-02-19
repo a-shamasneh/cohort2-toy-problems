@@ -12,9 +12,17 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
-
+for(var i=0;i<this.length;i++){
+	this[i]=callback(this[i]);
 }
-
+return this;
+}
+// am test this function on this case 
+// var a=function(n){
+// return n*2
+// }
+// [1,6,8].map(a)
+//  the result will be [2, 12, 16] 
 /*
 Example usage:
 var transform = function(element,index,array){
@@ -39,7 +47,16 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
-
+	var error=false;
+	var number;
+	if(typeof(a)==="number" && typeof(b)==="number"){
+		var number=a+b;
+		setTimeout(callback(error,number), 1000);
+	}
+	else{
+		error="Incorrect argument(s)";
+		setTimeout(callback(error),1000);
+	}
 };
 
 /*
